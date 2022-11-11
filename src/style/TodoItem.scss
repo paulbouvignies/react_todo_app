@@ -9,6 +9,12 @@
   &:hover{
     transform: scale(1.03);
   }
+  &__head{
+    width: 100%;
+    &__title{
+      width: 90%;
+    }
+  }
   &__delete,
   &__edit{
     position: absolute;

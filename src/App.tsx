@@ -1,4 +1,4 @@
-import React, {forwardRef} from 'react';
+import React, {useState} from 'react';
 import Nav from "./components/Nav";
 import './style/Main.scss'
 import TodoItem from "./components/TodoItem";
@@ -8,15 +8,17 @@ const App:React.FC = () => {
     class item {
         uuid: string;
         title: string;
-        constructor(uuid: string,title: string) {
+        checked: boolean = false;
+        constructor(uuid: string,title: string, checked: boolean) {
             this.uuid = uuid;
             this.title = title;
+            this.checked = checked
         }
 
     }
 
-    const [todoList, setTodoList] = React.useState<Array<any>>([]);
-    const [inputValue, setInputValue] = React.useState<string>('');
+    const [todoList, setTodoList] = useState<Array<any>>([]);
+    const [inputValue, setInputValue] = useState<string>('');
 
     const init = () => {
         if (localStorage.getItem('todoList') != null) {
@@ -39,22 +41,31 @@ const App:React.FC = () => {
     const addItems = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if (inputValue.length >= 4) {
-            todoList.push(new item(uuid(), inputValue))
+            todoList.push(new item(uuid(), inputValue, false))
             setInputValue('')
             saveTodoList()
         }
     }
 
     const deleteItem = (uuid: string) => {
-        const index = todoList.findIndex((item: any) => item.uuid === uuid)
+        let index = todoList.findIndex((item: any) => item.uuid === uuid)
         todoList.splice(index, 1)
         setTodoList([...todoList])
         saveTodoList()
     }
 
-    const editItem = (uuid: string, content: string) => {
-        console.log(uuid, content)
+    const editItem = (uuid: string, content: string, isCheck: boolean) => {
+        const newList = todoList.map((item: item) => {
+            if (item.uuid === uuid) {
+                item.title = content;
+                item.checked = isCheck
+            }
+            return item
+        })
+        setTodoList(newList)
+        saveTodoList()
     }
+
 
     React.useEffect(() => { init() }, [])
 
@@ -85,11 +96,12 @@ const App:React.FC = () => {
                                 todoList.map((item, index) => {
                                     return (
                                         <TodoItem
-                                            key={`itemValue-${index}`}
+                                            key={item.uuid}
                                             title={item.title}
+                                            checked={item.checked}
                                             uuid={item.uuid}
                                             deleteItem={ (uuid: string) => { deleteItem(uuid) } }
-                                            editItem={ (uuid: string, content: string) => { editItem(uuid, content) } }
+                                            editItem={ (uuid: string, content: string, isCheck:boolean) => { editItem(uuid, content, isCheck) } }
                                         />
                                     )
                                 })
