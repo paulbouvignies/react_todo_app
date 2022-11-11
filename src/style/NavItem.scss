@@ -1,0 +1,25 @@
+.navItem{
+  position: relative;
+  cursor: pointer;
+  &__label{
+    font-weight: 300;
+  }
+  &__icon{
+    color: #4C4C4C;
+    margin-right: 10px;
+  }
+  &__notification{
+    font-weight: 500;
+    position: absolute;
+    right: 0;
+    background-color: #F6F6F6;
+    border-radius: 5px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #666666;
+  }
+}

@@ -1,0 +1,52 @@
+.nav{
+  background-color: #fff;
+  width: 280px;
+  height: 100vh;
+  padding: 40px 20px;
+  &__head{
+    padding: 0 15px;
+    &__organisation{
+      &__brand{
+        width: 26px;
+        height: 25px;
+        border-radius: 4px;
+        background: linear-gradient(#e66465, #9198e5);
+        margin-right: 10px;
+      }
+      &__name{
+          font-size: 20px;
+          font-weight: 500;
+          color: #1A1919;
+      }
+      &__user{
+        &__avatar{
+          width: 37px;
+          height: 37px;
+        }
+      }
+    }
+  }
+  &__list{
+    &--main{
+      margin: 80px 0 65px 0;
+    }
+    li:not(.noHover){
+      cursor: pointer;
+    }
+    li{
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      border-radius: 5px;
+      padding: 10px 15px;
+      &:hover:not(.noHover){
+        background-color: #F6F6F6;
+      }
+    }
+    &--second{
+      &__title{
+        color: #808080;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
