@@ -1,0 +1,44 @@
+.todoItem{
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
+  transition: all .3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 15px 25px;
+  margin-bottom: 7px;
+  &:hover{
+    transform: scale(1.03);
+  }
+  &__delete,
+  &__edit{
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    margin-left: 10px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all .3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 5px;
+    background-color: #F6F6F6;
+    width: 30px;
+    height: 30px;
+    &__icon{
+        font-size: 15px;
+    }
+  }
+  &__edit{
+    right: 50px;
+  }
+  &:hover &__delete,
+  &:hover &__edit{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.todoItem--checked{
+  .todoItem__head__title{
+    text-decoration: line-through;
+    opacity: .8;
+  }
+}

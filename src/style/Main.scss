@@ -1,0 +1,36 @@
+.main{
+  width: 100%;
+}
+
+.todo{
+  width: 90%;
+  max-width: 800px;
+  padding-top: 40px;
+  &__title{
+    user-select: none;
+    font-weight: 600;
+    color: #1A1919;
+    font-size: 28px;
+  }
+  &__subtitle{
+    user-select: none;
+    font-weight: 300;
+    font-size: 16px;
+    margin: 10px 0 0 6px;
+  }
+  &__wrapper{
+    margin-top: 80px;
+    &__head{
+      padding: 0 25px;
+      input[type="checkbox"]{
+        pointer-events: none;
+      }
+      input[type="text"]{
+        width: 90%;
+      }
+    }
+    &__items{
+      margin-top: 20px;
+    }
+  }
+}
