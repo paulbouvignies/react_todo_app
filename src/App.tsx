@@ -3,6 +3,7 @@ import Nav from "./components/Nav";
 import './style/Main.scss'
 import TodoItem from "./components/TodoItem";
 
+
 const App:React.FC = () => {
 
     class item {
@@ -41,7 +42,7 @@ const App:React.FC = () => {
     const addItems = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if (inputValue.length >= 4) {
-            todoList.push(new item(uuid(), inputValue, false))
+            todoList.unshift(new item(uuid(), inputValue, false))
             setInputValue('')
             saveTodoList()
         }

@@ -1,5 +1,6 @@
 import React from "react";
 import '../style/TodoItem.scss'
+import SelectCategories from "./SelectCategorie";
 
 type TodoItemProps = {
     title: string;

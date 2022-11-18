@@ -80,3 +80,38 @@ input[type="text"]{
     color: #A5A5A5;
   }
 }
+
+
+
+/*------------------------------------*\
+  #SELECT
+\*------------------------------------*/
+.css-b62m3t-container{
+  width: 108px;
+}
+
+.css-qc6sy-singleValue{
+  font-weight: 300;
+    font-size: 12px;
+}
+
+.css-1hb7zxy-IndicatorsContainer{
+  display: none !important;
+}
+
+.css-1s2u09g-control{
+  min-height: 30px !important;
+}
+
+.css-6j8wv5-Input{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#react-select-3-listbox{
+  z-index: 10 !important;
+}
+
+.css-b62m3t-container{
+  border: none !important;
+}

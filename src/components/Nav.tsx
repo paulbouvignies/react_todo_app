@@ -13,7 +13,7 @@ const Nav: React.FC = () => {
                     <h3 className='nav__head__organisation__name'>Acme</h3>
                 </div>
                 <div className='nav__head__organisation__user'>
-                    <img className='nav__head__organisation__user__avatar' src="/assets/images/user_avatar.png" alt="organisation logo" />
+                    <img className='nav__head__organisation__user__avatar' src="assets/images/user_avatar.png" alt="organisation logo" />
                 </div>
             </div>
             <ul className='nav__list nav__list--main'>
